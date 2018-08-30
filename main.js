@@ -1,14 +1,15 @@
 var $button = document.querySelector('.start')
 var $currentTime = document.querySelector('.timeElapsed')
 var timeElapsed = parseInt($currentTime.textContent, 10)
-var stop = setInterval(updateTime, 1000)
+var stop = null
 
 $button.addEventListener('click', function () {
-  if (timeElapsed > 0) {
-    clearInterval(stop)
+  if (stop === null) {
+    stop = setInterval(updateTime, 1000)
   }
   else {
-    setInterval(updateTime, 1000)
+    clearInterval(stop)
+    stop = null
   }
 })
 
