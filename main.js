@@ -27,3 +27,21 @@ $button.addEventListener('click', changeText, false)
 $button.addEventListener('click', function () {
   $button.classList.replace('start', 'start-clicked')
 })
+
+var $reset = document.querySelector('.reset')
+
+function resetButton() {
+  if (timeElapsed === 0) {
+    $reset.visibility = 'hidden'
+  }
+  else {
+    $reset.visibility = 'visible'
+  }
+}
+
+$reset.addEventListener('click', function () {
+  while (stop = setInterval(updateTime, 1000)) {
+    clearInterval(stop)
+    $currentTime.textContent = 0
+  }
+})

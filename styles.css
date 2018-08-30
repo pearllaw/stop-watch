@@ -42,3 +42,16 @@ p {
   background-color: red;
   color: whitesmoke;
 }
+
+.reset {
+  height: 80px;
+  width: 200px;
+  margin: 10px;
+  font-weight: 400;
+  font-size: 1em;
+  margin-left: 42%;
+  border: none;
+  border-radius: 1em;
+  background-color: rgb(71, 71, 255);
+  color: whitesmoke;
+}
