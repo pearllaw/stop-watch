@@ -26,3 +26,14 @@ $button.addEventListener('click', changeText, false)
 $button.addEventListener('click', function () {
   $button.classList.replace('start', 'start-clicked')
 })
+
+var $reset = document.querySelector('.reset')
+
+function resetButton() {
+  if (timeElapsed > 0) {
+    $reset.hidden = false
+  }
+  else {
+    $reset.hidden = true
+  }
+}
