@@ -1,7 +1,7 @@
 var $button = document.querySelector('.start')
 $button.addEventListener('click', function () {
-  console.log('Hello')
-}, false)
+  setInterval(updateTime, 1000)
+})
 
 function updateTime() {
   var $currentTime = document.querySelector('.timeElapsed')
