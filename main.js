@@ -31,10 +31,16 @@ $button.addEventListener('click', function () {
 var $reset = document.querySelector('.reset')
 
 function resetButton() {
-  if (timeElapsed > 0) {
-    $reset.hidden = false
+  if (timeElapsed === 0) {
+    $reset.visibility = 'hidden'
   }
   else {
-    $reset.hidden = true
+    $reset.visibility = 'visible'
   }
 }
+
+$reset.addEventListener('click', function () {
+  while (stop = setInterval(updateTime, 1000)) {
+    clearInterval(stop)
+  }
+})
