@@ -42,5 +42,6 @@ function resetButton() {
 $reset.addEventListener('click', function () {
   while (stop = setInterval(updateTime, 1000)) {
     clearInterval(stop)
+    $currentTime.textContent = 0
   }
 })
