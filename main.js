@@ -1,11 +1,29 @@
 var $button = document.querySelector('.start')
+var $currentTime = document.querySelector('.timeElapsed')
+var timeElapsed = parseInt($currentTime.textContent, 10)
+var stop = null
+
 $button.addEventListener('click', function () {
-  setInterval(updateTime, 1000)
+  if (stop === null) {
+    stop = setInterval(updateTime, 1000)
+  }
+  else {
+    clearInterval(stop)
+    stop = null
+  }
 })
 
 function updateTime() {
-  var $currentTime = document.querySelector('.timeElapsed')
-  var timeElapsed = parseInt($currentTime.textContent, 10)
   timeElapsed += 1
   $currentTime.textContent = timeElapsed
 }
+
+function changeText() {
+  $button.textContent = 'Pause'
+}
+
+$button.addEventListener('click', changeText, false)
+
+$button.addEventListener('click', function () {
+  $button.classList.replace('start', 'start-clicked')
+})
