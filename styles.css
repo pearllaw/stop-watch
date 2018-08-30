@@ -1,0 +1,31 @@
+* {
+  background: whitesmoke;
+  color: black;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+
+p {
+  font-weight: 500;
+  font-size: 3em;
+  text-align: center;
+}
+
+.start {
+  height: 80px;
+  width: 200px;
+  margin: 0 auto;
+  font-weight: 400;
+  font-size: 1em;
+  margin-left: 42%;
+  border: none;
+  border-radius: 1em;
+  background-color: rgb(28, 186, 86);
+  color: whitesmoke;
+}
