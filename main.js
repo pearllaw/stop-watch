@@ -22,3 +22,7 @@ function changeText() {
 }
 
 $button.addEventListener('click', changeText, false)
+
+$button.addEventListener('click', function () {
+  $button.classList.replace('start', 'start-clicked')
+})

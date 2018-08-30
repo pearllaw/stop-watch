@@ -29,3 +29,16 @@ p {
   background-color: rgb(28, 186, 86);
   color: whitesmoke;
 }
+
+.start-clicked {
+  height: 80px;
+  width: 200px;
+  margin: 0 auto;
+  font-weight: 400;
+  font-size: 1em;
+  margin-left: 42%;
+  border: none;
+  border-radius: 1em;
+  background-color: red;
+  color: whitesmoke;
+}
