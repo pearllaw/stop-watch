@@ -16,3 +16,9 @@ function updateTime() {
   timeElapsed += 1
   $currentTime.textContent = timeElapsed
 }
+
+function changeText() {
+  $button.textContent = 'Pause'
+}
+
+$button.addEventListener('click', changeText, false)
