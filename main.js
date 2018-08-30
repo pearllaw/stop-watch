@@ -1,11 +1,18 @@
 var $button = document.querySelector('.start')
+var $currentTime = document.querySelector('.timeElapsed')
+var timeElapsed = parseInt($currentTime.textContent, 10)
+var stop = setInterval(updateTime, 1000)
+
 $button.addEventListener('click', function () {
-  setInterval(updateTime, 1000)
+  if (timeElapsed > 0) {
+    clearInterval(stop)
+  }
+  else {
+    setInterval(updateTime, 1000)
+  }
 })
 
 function updateTime() {
-  var $currentTime = document.querySelector('.timeElapsed')
-  var timeElapsed = parseInt($currentTime.textContent, 10)
   timeElapsed += 1
   $currentTime.textContent = timeElapsed
 }
