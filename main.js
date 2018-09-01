@@ -3,13 +3,19 @@ var $currentTime = document.querySelector('.timeElapsed')
 var timeElapsed = parseInt($currentTime.textContent, 10)
 var stop = null
 
+//Start and pause button features
 $button.addEventListener('click', function () {
   if (stop === null) {
     stop = setInterval(updateTime, 1000)
+    $button.textContent = 'Pause'
+    $button.classList.replace('start', 'start-clicked')
+    $reset.classList.toggle('reset-visible')
   }
   else {
     clearInterval(stop)
     stop = null
+    $button.textContent = 'Start'
+    $button.classList.replace('start-clicked', 'start')
   }
 })
 
@@ -18,30 +24,10 @@ function updateTime() {
   $currentTime.textContent = timeElapsed
 }
 
-function changeText() {
-  $button.textContent = 'Pause'
-}
-
-$button.addEventListener('click', changeText, false)
-
-$button.addEventListener('click', function () {
-  $button.classList.replace('start', 'start-clicked')
-})
-
+//Reset button features
 var $reset = document.querySelector('.reset')
 
-function resetButton() {
-  if (timeElapsed === 0) {
-    $reset.visibility = 'hidden'
-  }
-  else {
-    $reset.visibility = 'visible'
-  }
-}
-
 $reset.addEventListener('click', function () {
-  while (stop = setInterval(updateTime, 1000)) {
-    clearInterval(stop)
-    $currentTime.textContent = 0
-  }
+  clearInterval(stop)
+  $currentTime.textContent = 0
 })
