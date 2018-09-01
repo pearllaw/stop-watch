@@ -32,4 +32,5 @@ $reset.addEventListener('click', function () {
   $currentTime.textContent = 0
   $reset.classList.replace('reset-visible', 'reset')
   $button.classList.replace('start-clicked', 'start')
+  $button.textContent = 'Start'
 })
