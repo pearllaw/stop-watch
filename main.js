@@ -30,4 +30,6 @@ var $reset = document.querySelector('.reset')
 $reset.addEventListener('click', function () {
   clearInterval(stop)
   $currentTime.textContent = 0
+  $reset.classList.replace('reset-visible', 'reset')
+  $button.classList.replace('start-clicked', 'start')
 })
