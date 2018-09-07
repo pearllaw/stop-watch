@@ -10,26 +10,31 @@ $button.addEventListener('click', function () {
     time = setInterval(updateTime, 1000)
     $button.textContent = 'Pause'
     $button.classList.replace('start', 'start-clicked')
-    $reset.classList.toggle('reset-visible')
+    $reset.classList.add('reset-visible')
   }
   else {
     clearInterval(time)
     time = null
     $button.textContent = 'Start'
     $button.classList.replace('start-clicked', 'start')
+    $reset.classList.add('reset-visible')
   }
 })
 
 function updateTime() {
   timeElapsed += 1
   $currentTime.textContent = timeElapsed
+}
 
+function tick() {
   if ($input.value > 0) {
     $currentTime.textContent = $input.value
     $input.value -= 1
+    $currentTime.classList.remove('timeup')
   }
   else {
     $currentTime.textContent = 0
+    $currentTime.classList.add('timeup')
   }
 }
 
@@ -42,4 +47,5 @@ $reset.addEventListener('click', function () {
   $reset.classList.replace('reset-visible', 'reset')
   $button.classList.replace('start-clicked', 'start')
   $button.textContent = 'Start'
+  $currentTime.classList.remove('timeup')
 })

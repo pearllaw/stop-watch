@@ -17,6 +17,14 @@ p {
   margin: 0 auto;
 }
 
+@keyframes blink {
+  50% {border-color: aqua};
+}
+
+.timeup {
+  animation: blink 0.5s step-end infinite;
+}
+
 .start {
   height: 60px;
   width: 100px;
