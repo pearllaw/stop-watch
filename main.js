@@ -21,13 +21,15 @@ $button.addEventListener('click', function () {
 })
 
 function updateTime() {
-  if ($input.value >= 0) {
+  timeElapsed += 1
+  $currentTime.textContent = timeElapsed
+
+  if ($input.value > 0) {
     $currentTime.textContent = $input.value
     $input.value -= 1
   }
   else {
-  timeElapsed += 1
-  $currentTime.textContent = timeElapsed
+    $currentTime.textContent = 0
   }
 }
 
